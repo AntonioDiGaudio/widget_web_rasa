@@ -1,0 +1,104 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - ciao
+    - salve
+    - ciao
+    - ciao là
+    - buongiorno
+    - buonasera
+    - moin
+    - ciao là
+    - andiamo
+    - ciao amico
+    - buongiorno
+    - buonasera
+    - buon pomeriggio
+
+- intent: goodbye
+  examples: |
+    - ciao
+    - arrivederci
+    - ci vediamo dopo
+    - buonanotte
+    - addio
+    - arrivederci
+    - buona giornata
+    - ci vediamo in giro
+    - arrivederci
+    - ci vediamo dopo
+
+- intent: affirm
+  examples: |
+    - sì
+    - s
+    - certamente
+    - ovviamente
+    - sembra buono
+    - corretto
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - mai
+    - non penso proprio
+    - non mi piace
+    - assolutamente no
+    - non proprio
+
+- intent: mood_great
+  examples: |
+    - perfetto
+    - fantastico
+    - incredibile
+    - mi sento come un re
+    - meraviglioso
+    - mi sento molto bene
+    - sono fantastico
+    - sono incredibile
+    - salverò il mondo
+    - super entusiasta
+    - estremamente buono
+    - così così perfetto
+    - così buono
+    - così perfetto
+
+- intent: mood_unhappy
+  examples: |
+    - la mia giornata è stata orribile
+    - sono triste
+    - non mi sento molto bene
+    - sono deluso
+    - super triste
+    - sono così triste
+    - triste
+    - molto triste
+    - infelice
+    - non buono
+    - non molto buono
+    - estremamente triste
+    - così triste
+    - così triste
+
+- intent: bot_challenge
+  examples: |
+    - sei un bot?
+    - sei umano?
+    - sto parlando con un bot?
+    - sto parlando con un umano?
+
+- intent: info_intent
+  examples: |
+    - mi serve una mano
+    - dimmi di piu
+    - mi servono informazioni
+    - info
+
+- intent: 
+  examples: |
+    - hello
+    - world
+    - program
