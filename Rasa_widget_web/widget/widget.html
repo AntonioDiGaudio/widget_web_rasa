@@ -1,16 +1,33 @@
 <html>
 <body>
 <style>
-	.rw-conversation-container	.rw-header{ background-color: #fa7070;}
-	.rw-conversation-container	.rw-messages-container .rw-message .rw-client{ background-color: #fa7070;}
-	.rw-launcher { background-color: #fa7070;}
-	.rw-conversation-container .rw-sender .rw-send .rw-send-icon-ready {  fill: #fa7070 } 
-	.rw-conversation-container .rw-header .rw-avatar {
-    all: initial;
-    height: 40;
-    width: 40;
-    margin-left: 10px;
-}
+	.rw-conversation-container    .rw-header{ background-color: #ff5757;}
+    .rw-conversation-container  .rw-carousel-arrow {
+    background-color: white;
+    border-radius : 30px;
+    }.rw-conversation-container .rw-response{background-color:#ff5757; font-family: -apple-system, system-ui, BlinkMacSystemFont;color: white;}    .rw-messages-container{ background-color:white;} .rw-message .rw-client{ background-color: #F4F4F4;
+    color:black} 
+    .rw-launcher { background-color: #ff5757;}
+    .rw-conversation-container{color:black;} .rw-sender .rw-send .rw-send-icon-ready {  fill: #c8d2ad;
+      color:black} 
+    .rw-conversation-container .rw-message-text{font-family: -apple-system, system-ui, BlinkMacSystemFont;}
+  .rw-conversation-container .rw-reply {
+    background-color: #F4F4F4;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont;
+    color:black;
+    border: 10px;
+  }
+  
+  .rw-carousel-container{max-height: 250px;
+    min-height: 100px;} a.rw-carousel-card-title {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont;
+}.rw-carousel-container .rw-carousel-card {background-color:#F4F4F4;max-height:260px;min-height:150px;}
+.rw-carousel-container .rw-carousel-card .rw-carousel-card-subtitle{font-family: -apple-system, system-ui, BlinkMacSystemFont;}
+  .rw-arrow{
+    filter: invert(55%) sepia(35%) saturate(2511%) hue-rotate(323deg) brightness(97%) contrast(106%);
+    
+  }
+
 
 </style>
 <script>
@@ -23,12 +40,12 @@
     (e.async = !0),
     (e.onload = () => {
       window.WebChat.default(
-        {
+        { 
 		  title: "Travelino",
 		  subtitle: "Il tuo assistente di viaggio",
           customData: { language: "en" },
-		  socketUrl: "http://localhost:5005",
-          initPayload: "/greet",
+		  socketUrl: "http://localhost:5005", 
+          initPayload: "/intent_trip",
           inputTextFieldHint: "Scrivi un messaggio...",
 		  showMessageDate: true,
 		  displayUnreadCount: true,
@@ -41,6 +58,7 @@
     }),
     t.insertBefore(e, t.firstChild);
 })();
+localStorage.clear();
 </script>
 </body>
 </html>

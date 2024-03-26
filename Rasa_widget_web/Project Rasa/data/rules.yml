@@ -24,4 +24,8 @@ rules:
   steps:
   - intent: info_intent
   - action: utter_info 
-  
+
+- rule: nlu low confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_fail

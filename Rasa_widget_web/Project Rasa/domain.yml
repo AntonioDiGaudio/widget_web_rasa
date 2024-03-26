@@ -9,6 +9,9 @@ intents:
   - mood_unhappy
   - bot_challenge
   - info_intent
+  - intent_saluto
+  - intent_trip
+  
 
 responses:
   utter_greet:
@@ -46,6 +49,15 @@ responses:
   - text: "Parlami del problema"
 
   
+  utter_fail:
+  - text: Scusa non ho capito
+
+
+actions:
+  - act_saluto
+  - act_city_list
+
+
 
 
 session_config:

@@ -38,3 +38,19 @@ stories:
   - intent: info_intent
   - action: utter_info
   
+
+- story: Saluto scafazzato
+  steps:
+  - intent: intent_saluto
+  - action: act_saluto
+
+
+
+
+#storia catrosello città
+
+- story: Select city
+  steps:
+  - intent: intent_trip #pianifica viaggio
+  - action: act_city_list  #fai vedere le mete
+  
