@@ -47,7 +47,7 @@ class TripCarousel(Action):
                     {
                         "title": "Info",
                         "subtitle": "Scopri di più",
-                        "image_url": "https://travelino.it/wp-content/uploads/2024/03/info-1.png",
+                        "image_url": "https://travelino.it/wp-content/uploads/2024/03/Chiamaci.png",
                         "buttons" : [
                             {
 
@@ -60,7 +60,7 @@ class TripCarousel(Action):
                      {
                         "title": "Chiamaci",
                         "subtitle": "Connettiti con noi al volo",
-                        "image_url": "https://travelino.it/wp-content/uploads/2024/03/Chiamaci.png",
+                        "image_url": "https://travelino.it/wp-content/uploads/2024/03/info-1.png",
                         "buttons" : [
                             {
 
