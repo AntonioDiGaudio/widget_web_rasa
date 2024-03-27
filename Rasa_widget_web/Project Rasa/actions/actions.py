@@ -20,7 +20,7 @@ class SalutoActionClass(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message(text="Ciao compare, la classe action ti saluta")
+        dispatcher.utter_message(text="Ciao, sono Travelino 😎, chiedimi ciò che vuoi oppure clicca una delle opzioni di seguito: ")
 
         return []
 
@@ -32,7 +32,7 @@ class SalutoActionClass(Action):
 class TripCarousel(Action):
 
     def name(self) -> Text:
-        return "act_city_list"
+        return "act_list"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -89,6 +89,6 @@ class TripCarousel(Action):
     }    
 
 
-        dispatcher.utter_message(text="Ciao, sono Travelino 😎, chiedimi ciò che vuoi oppure clicca una delle opzioni di seguito: " , attachment = new_carousel)
+        dispatcher.utter_message( attachment = new_carousel)
 
         return []

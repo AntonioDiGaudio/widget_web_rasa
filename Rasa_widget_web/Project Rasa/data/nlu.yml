@@ -3,192 +3,125 @@ version: "3.1"
 nlu:
 - intent: greet
   examples: |
-    - Ciao! Come va?
-    - Ciao, tutto bene?
-    - Ehi là, da quanto tempo!
-    - Ciao!
-    - Ehi, come va la vita?
-    - Che succede?
-    - Ehi, amico! Come stai?
-    - Ciao, che si dice?
-    - Ciao, sconosciuto!
-    - Ehi, bello! Come è stata la tua giornata?
-    - Beh, ciao!
-    - Ciao, splendida!
-    - Ehi, sole!
-    - Ciao, come va?
-    - Ehi, amico!
-    - Ciao, amico! Pronto per divertirti?
-    - Ehi, campione!
-    - Ehi, superstar! Cosa c'è di nuovo?
-    - Ciao, tesoro!
-    - Ehi, tu! Pronto per conquistare il giorno?
-    - We
-    - Frate
-    - We bro
-    - bro
-    - brother 
-    - ciao
-    - salve
-    - ciao là
-    - buongiorno
-    - buonasera
-    - moin
-    - ciao là
-    - andiamo
-    - ciao amico
-    - buongiorno
-    - buonasera
-    - buon pomeriggio
-    - Ciao!
-    - Salve!
-    - Buongiorno!
-    - Buonasera!
-    - Hello!
-    - Hi!
-    - Hey!
-    - Ciao, come va?
-    - Salve, tutto bene?
-    - Buongiorno, come stai?
-    - Buonasera, tutto ok?
-    - Hello, how are you?
-    - Hi, how's it going?
-    - Hey, what's up?
-    - Ciao, è un piacere conoscerti!
-    - Salve, mi chiamo , e tu?
-    - Buongiorno, che bella giornata!
-    - Buonasera, hai trascorso una buona giornata?
-    - Ciao piacere di conoscerti
+    - Ciao, tutto ok?
+    - Salve, come procede?
+    - Buongiorno, sei pronto per il giorno?
+    - Buonasera, hai trascorso una giornata produttiva?
+    - Oi, come stai oggi?
+    - Ei, hai avuto una giornata positiva?
+    - Hey, cosa hai fatto di bello?
+    - Ciao, è bello vederti!
+    - Salve
+    - Buongiorno, come sta andando?
+    - Buonasera, ti stai godendo la serata?
+
 
 
 - intent: goodbye
   examples: |
-    - arrivederci
-    - ci vediamo dopo
-    - buonanotte
-    - addio
-    - arrivederci
-    - buona giornata
-    - ci vediamo in giro
-    - arrivederci
-    - ci vediamo dopo
-    - Arrivederci e grazie di tutto.
-    - Ciao, ci sentiamo presto!
-    - Addio, ti ricorderò sempre con affetto.
-    - Arrivederci, ti voglio bene.
-    - A presto, prenditi cura di te.
-    - Ci vediamo, mi mancherai.
-    - Arrivederci, in bocca al lupo per tutto.
-    - Ciao, resterai sempre nel mio cuore.
-    - Addio, spero di rivederti presto.
-    - Arrivederci, che la vita ti sia gentile.
-    - A presto, non dimenticarmi!
-    - Ci vediamo, grazie per i bei momenti.
-    - Arrivederci, ti auguro ogni felicità.
-    - Ciao, ti porterò sempre con me.
-    - Addio, ricorderò sempre i momenti passati insieme.
-    - Arrivederci, ti terrò nei miei pensieri.
-    - A presto, non dimenticare di sorridere.
-    - Ci vediamo, spero che i nostri cammini si incontrino di nuovo.
-    - Arrivederci, grazie per tutto il supporto.
-    - Ciao, che la vita ti riservi solo gioie.
-    - Addio, rimani forte e coraggioso.
-    - Arrivederci, ti lascio con un abbraccio virtuale.
-    - A presto, ti aspetto con ansia.
-    - Ci vediamo, non dimenticare di essere te stesso.
-    - Arrivederci, il nostro tempo insieme è stato prezioso.
-    - Ciao, conserverò i nostri ricordi più belli.
-    - Addio, vai avanti con fiducia.
-    - Arrivederci, mantieni viva la tua passione.
-    - A presto, goditi ogni momento.
-    - Ci vediamo, il nostro legame è eterno.
-    - è stato un piacere
-    - me ne vado
-    - ora me ne devo andare
-    - è stato bello
+    - Arrivederci!
+    - A presto!
+    - Grazie di tutto!
+    - Ci vediamo!
+    - È stato bello!
+    - Addio!
+    - Buona giornata!
+    - Resta nel mio cuore!
+    - Spero di rivederti!
+    - Rimani forte!
+    - Tienimi nei tuoi pensieri!
+    - Non dimenticarmi!
+    - Vai avanti con fiducia!
+    - Mantieni viva la tua passione!
+    - Goditi ogni momento!
+    - Il nostro legame è eterno!
+    - Mi mancherai!
+    - Ti aspetto con ansia!
+    - È stato un piacere!
+    - Ora me ne devo andare!
 
 
-# - intent: affirm
-#   examples: |
-#     - sì
-#     - s
-#     - certamente
-#     - ovviamente
-#     - sembra buono
-#     - corretto
 
-# - intent: deny
-#   examples: |
-#     - no
-#     - n
-#     - mai
-#     - non penso proprio
-#     - non mi piace
-#     - assolutamente no
-#     - non proprio
-
-# - intent: mood_great
-#   examples: |
-#     - perfetto
-#     - fantastico
-#     - incredibile
-#     - mi sento comeintent_trip un re
-#     - meraviglioso
-#     - mi sento molto bene
-#     - sono fantastico
-#     - sono incredibile
-#     - salverò il mondo
-#     - super entusiasta
-#     - estremamente buono
-#     - così così perfetto
-#     - così buono
-#     - così perfetto
-
-# - intent: mood_unhappy
-#   examples: |
-#     - la mia giornata è stata orribile
-#     - sono triste
-#     - non mi sento molto bene
-#     - sono deluso
-#     - super triste
-#     - sono così triste
-#     - triste
-#     - molto triste
-#     - infelice
-#     - non buono
-#     - non molto buono
-#     - estremamente triste
-#     - così triste
-#     - così triste
-
-# - intent: bot_challenge
-#   examples: |
-#     - sei un bot?
-#     - sei umano?
-#     - sto parlando con un bot?
-#     - sto parlando con un umano?
-
-# - intent: info_intent
-#   examples: |
-#     - mi serve una mano
-#     - dimmi di piu
-#     - mi servono informazioni
-#     - info
-
-- intent: intent_saluto
+- intent: affirm
   examples: |
-    - prova
-    - prova rasa
-    
+    - sì
+    - certamente
+    - ovviamente
+    - sembra buono
+    - corretto
 
-
-- intent: intent_trip
+- intent: deny
   examples: |
-    - Voglio viaggiare
-    - Viaggio
-    - città
-    - itinerario
-    - che città posso visitare
-    - voglio fare un vaggio
+    - no
+    - non penso proprio
+    - non mi piace
+    - assolutamente no
+    - non proprio
+
+
+- intent: bot_challenge
+  examples: |
+    - sei un bot?
+    - sei umano?
+    - sto parlando con un bot?
+    - sto parlando con un umano?
+    - sei un AI?
+    - sei un intelligenza artificiale?
+
+- intent: info_intent
+  examples: |
+    - Mi serve aiuto.
+    - Dimmi di più.
+    - Ho bisogno di informazioni.
+    - Quali sono i vostri clienti principali?
+    - A chi si rivolgono principalmente i vostri servizi?
+    - Di quale tipo di aziende vi occupate principalmente?
+    - Quali sono le categorie di aziende che beneficiano dei vostri servizi?
+    - Potresti descrivermi il vostro target di clientela?
+    - Quali sono le caratteristiche delle aziende che solitamente scegliete come clienti?
+    - Di quali settori si occupano principalmente i vostri clienti?
+    - Quali tipologie di aziende possono trarre vantaggio dalle vostre soluzioni tecnologiche?
+    - Chi sono i vostri interlocutori principali nel settore turistico?
+    - Quali sono le sfide più comuni affrontate dai vostri clienti nel mondo digitale?
+    - Come vi distinguete nel supportare i vostri clienti nel settore turistico?
+    - A chi rivolgersi per ottenere ulteriori informazioni sui vostri servizi?
+    - Chi siete?
+    - Per chi lavorate?
+    - Come guadagnate?
+    - Perché dovrei rivolgermi a voi?
+
+
+- intent: approccio
+  examples: |
+    - vi voglio contattare
+    - come vi posso chiamare
+    - dove trovo l'email
+    - ho dei problemi
+    - il sito non funziona
+    - dove vi trovo
+
+
+- intent: start
+  examples: |
+    -start
+
+
+- intent: ringraziamento
+  examples: |
+    - Grazie per l'aiuto!
+    - Grazie per la risposta.
+    - Ti ringrazio per il supporto.
+    - Grazie per il tempo dedicato!
+    - Grazie, hai risolto il problema!
+    - Ti sono grato per l'assistenza.
+    - Grazie infinite!
+    - Ti ringrazio per la gentilezza.
+    - Grazie per la comprensione.
+    - Ti ringrazio molto!
+    - Grazie per il chiarimento.
+    - Ti sono grato per il tuo aiuto.
+    - Grazie per il supporto ricevuto.
+    - Ti ringrazio per l'attenzione.
+    - Grazie per il tuo sostegno.
 
 
