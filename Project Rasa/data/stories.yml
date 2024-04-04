@@ -1,0 +1,36 @@
+stories:
+
+
+
+- story: more info path 1
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: info_intent
+  - action: utter_info
+  - intent: affirm
+  - action: utter_info
+
+
+- story: stop info 
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: info_intent
+  - action: utter_info
+  - intent: deny
+  - action: utter_fail
+
+
+
+- story: contact_approach path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: approccio
+  - action: act_list
+
+
+
+
+
