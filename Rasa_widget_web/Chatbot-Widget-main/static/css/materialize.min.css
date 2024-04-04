@@ -1,0 +1,298 @@
+.modal {
+    -webkit-box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
+}
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: #fafafa;
+    padding: 0;
+    max-height: 70%;
+    width: 55%;
+    margin: auto;
+    overflow-y: auto;
+    border-radius: 2px;
+    will-change: top, opacity;
+}
+.modal:focus {
+    outline: none;
+}
+@media only screen and (max-width: 992px) {
+    .modal {
+        width: 80%;
+    }
+}
+.modal h1,
+.modal h2,
+.modal h3,
+.modal h4 {
+    margin-top: 0;
+}
+.modal .modal-content {
+    padding: 24px;
+}
+.modal .modal-close {
+    cursor: pointer;
+}
+.modal .modal-footer {
+    border-radius: 0 0 2px 2px;
+    background-color: #fafafa;
+    padding: 4px 6px;
+    height: 56px;
+    width: 100%;
+    text-align: right;
+}
+.modal .modal-footer .btn,
+.modal .modal-footer .btn-large,
+.modal .modal-footer .btn-small,
+.modal .modal-footer .btn-flat {
+    margin: 6px 0;
+}
+.modal-overlay {
+    position: fixed;
+    z-index: 999;
+    top: -25%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 125%;
+    width: 100%;
+    background: #000;
+    display: none;
+    will-change: opacity;
+}
+.modal.modal-fixed-footer {
+    padding: 0;
+    height: 70%;
+}
+.modal.modal-fixed-footer .modal-content {
+    position: absolute;
+    height: calc(100% - 56px);
+    max-height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+.modal.modal-fixed-footer .modal-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 0;
+}
+
+.modal.bottom-sheet {
+    top: auto;
+    bottom: -100%;
+    margin: 0;
+    width: 100%;
+    max-height: 45%;
+    border-radius: 0;
+    will-change: bottom, opacity;
+}
+
+.datepicker-modal {
+    max-width: 325px;
+    min-width: 300px;
+    max-height: none;
+}
+.datepicker-container.modal-content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 0;
+}
+
+@media only screen and (min-width: 601px) {
+    .datepicker-modal {
+        max-width: 625px;
+    }
+    .datepicker-container.modal-content {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+    .datepicker-date-display {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 1 270px;
+        -ms-flex: 0 1 270px;
+        flex: 0 1 270px;
+    }
+    .datepicker-controls,
+    .datepicker-table,
+    .datepicker-footer {
+        width: 320px;
+    }
+    .datepicker-day-button {
+        line-height: 44px;
+    }
+}
+.timepicker-modal {
+    max-width: 325px;
+    max-height: none;
+}
+.timepicker-container.modal-content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 0;
+}
+
+
+@media only screen and (min-width: 601px) {
+    .timepicker-modal {
+        max-width: 600px;
+    }
+    .timepicker-container.modal-content {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+    .timepicker-text-container {
+        top: 32%;
+    }
+    .timepicker-display-am-pm {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        text-align: center;
+        margin-top: 1.2rem;
+    }
+}
+
+
+.clearfix {
+    clear: both;
+}
+
+.tap-target-wrapper {
+    width: 800px;
+    height: 800px;
+    position: fixed;
+    z-index: 1000;
+    visibility: hidden;
+    -webkit-transition: visibility 0s 0.3s;
+    transition: visibility 0s 0.3s;
+}
+.tap-target-wrapper.open {
+    visibility: visible;
+    -webkit-transition: visibility 0s;
+    transition: visibility 0s;
+}
+
+.tap-target-wrapper.open .tap-target {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0.95;
+    -webkit-transition: opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1), -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+    transition: opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1), -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+    transition: transform 0.3s cubic-bezier(0.42, 0, 0.58, 1), opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+    transition: transform 0.3s cubic-bezier(0.42, 0, 0.58, 1), opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1), -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+}
+.tap-target-wrapper.open .tap-target-wave::before {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.tap-target-wrapper.open .tap-target-wave::after {
+    visibility: visible;
+    -webkit-animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+    animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+    -webkit-transition: opacity 0.3s, visibility 0s 1s, -webkit-transform 0.3s;
+    transition: opacity 0.3s, visibility 0s 1s, -webkit-transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s, visibility 0s 1s;
+    transition: opacity 0.3s, transform 0.3s, visibility 0s 1s, -webkit-transform 0.3s;
+}
+
+.tap-target {
+    position: absolute;
+    font-size: 1rem;
+    border-radius: 50%;
+    background-color: #ee6e73;
+    -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.14), 0 10px 50px 0 rgba(0, 0, 0, 0.12), 0 30px 10px -20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.14), 0 10px 50px 0 rgba(0, 0, 0, 0.12), 0 30px 10px -20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1), -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+    transition: opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1), -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+    transition: transform 0.3s cubic-bezier(0.42, 0, 0.58, 1), opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+    transition: transform 0.3s cubic-bezier(0.42, 0, 0.58, 1), opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1), -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+}
+.tap-target-content {
+    position: relative;
+    display: table-cell;
+}
+.tap-target-wave {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 10001;
+}
+
+.tap-target-wave::before,
+.tap-target-wave::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+.tap-target-wave::before {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.tap-target-wave::after {
+    visibility: hidden;
+    -webkit-transition: opacity 0.3s, visibility 0s, -webkit-transform 0.3s;
+    transition: opacity 0.3s, visibility 0s, -webkit-transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s, visibility 0s;
+    transition: opacity 0.3s, transform 0.3s, visibility 0s, -webkit-transform 0.3s;
+    z-index: -1;
+}
+
+
+.tap-target-origin {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 10002;
+    position: absolute !important;
+}
+.tap-target-origin:not(.btn):not(.btn-large):not(.btn-small),
+.tap-target-origin:not(.btn):not(.btn-large):not(.btn-small):hover {
+    background: none;
+}
+@media only screen and (max-width: 600px) {
+    .tap-target,
+    .tap-target-wrapper {
+        width: 600px;
+        height: 600px;
+    }
+}
+
+.white-text {
+    color: #fff !important;
+}

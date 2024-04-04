@@ -1,0 +1,79 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - info_intent
+  - start
+  - approccio
+  - ringraziamento
+  
+
+responses:
+  utter_greet:
+  - text: "Ciao! Come stai?"
+  - text: "Ciao"
+  - text: "Ciao, dimmi pure"
+  
+  # utter_cheer_up:
+  # - text: "Ecco qualcosa per tirarti su: https://www.youtube.com/watch?v=dQw4w9WgXcQ "
+
+  utter_did_that_help:
+  - text: "Ti ha aiutato?"
+  - text: "Risolto?"
+
+  # utter_happy:
+  # - text: "Fantastico, continua così!"
+  # - text: "Bene!"
+  # - text: "Meraviglioso"
+
+  utter_goodbye:
+  - text: "Arrivederci"
+  - text: "Alla prossima"
+  - text: "Buona giornata"
+
+  utter_iamabot:
+  - text: "Sono un bot di Travelino!."
+  - text: "Sono un bot ma ho dei sentimenti"
+  - text: "Non sono umano, ma qualcosa di simile"
+
+
+  utter_info:
+  - text: "Siamo specializzati nel settore dei viaggi e proponiamo soluzioni di comunicazione innovative e tecnologiche esclusivamente per tour operator, agenzie di viaggi e hotel. Posso esserti ancora utile?"
+  - text: "La nostra versatilità permette di soddisfare le esigenze specifiche sia delle aziende che si rivolgono al B2C che B2B, garantendo un approccio personalizzato. Posso esserti ancora utile?"
+  - text: "Grazie alla nostra squadra dinamica e creativa coniughiamo abilmente il know-how nel settore con la capacità di creare strategie digitali mirate. Posso esserti ancora utile?"
+  - text: "Conosciamo la complessità dei business nel settore turistico e delle sfide che comporta l’approccio al mondo digitale. Posso esserti ancora utile?"
+  - text: "Mettiamo a disposizione gli strumenti più idonei per supportare un percorso di valore. Posso esserti ancora utile?"
+  - text: "Travelino è la prima azienda in Italia a fornire per la filiera del turismo soluzioni tecnologiche e di marketing avanzate attraverso l'utilizzo dell'intelligenza artificiale e Big Data. Posso esserti ancora utile?"
+  - text: "I nostri strumenti digitali semplificano il lavoro ed abbattono i costi, ottimizzando il vostro tempo. Posso esserti ancora utile?"
+
+
+  
+  utter_fail:
+  - text: "Scusa non ho capito. Puoi essere più chiaro perfavore?"
+
+
+  # utter_deny:
+  # - text: "Se non ti sono stato utile dimmi di più"
+
+
+  # utter_affirm:
+  # - text: "Sono contento che ti sono stato utile"
+
+  utter_thanks:
+  - text: "Grazie a te della chiaccherata!"
+  - text: "È sempre un piacere!"
+
+actions:
+  - act_saluto
+  - act_list
+
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

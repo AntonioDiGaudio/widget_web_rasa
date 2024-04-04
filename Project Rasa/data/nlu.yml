@@ -1,0 +1,127 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - Ciao, tutto ok?
+    - Salve, come procede?
+    - Buongiorno, sei pronto per il giorno?
+    - Buonasera, hai trascorso una giornata produttiva?
+    - Oi, come stai oggi?
+    - Ei, hai avuto una giornata positiva?
+    - Hey, cosa hai fatto di bello?
+    - Ciao, è bello vederti!
+    - Salve
+    - Buongiorno, come sta andando?
+    - Buonasera, ti stai godendo la serata?
+
+
+
+- intent: goodbye
+  examples: |
+    - Arrivederci!
+    - A presto!
+    - Grazie di tutto!
+    - Ci vediamo!
+    - È stato bello!
+    - Addio!
+    - Buona giornata!
+    - Resta nel mio cuore!
+    - Spero di rivederti!
+    - Rimani forte!
+    - Tienimi nei tuoi pensieri!
+    - Non dimenticarmi!
+    - Vai avanti con fiducia!
+    - Mantieni viva la tua passione!
+    - Goditi ogni momento!
+    - Il nostro legame è eterno!
+    - Mi mancherai!
+    - Ti aspetto con ansia!
+    - È stato un piacere!
+    - Ora me ne devo andare!
+
+
+
+- intent: affirm
+  examples: |
+    - sì
+    - certamente
+    - ovviamente
+    - sembra buono
+    - corretto
+
+- intent: deny
+  examples: |
+    - no
+    - non penso proprio
+    - non mi piace
+    - assolutamente no
+    - non proprio
+
+
+- intent: bot_challenge
+  examples: |
+    - sei un bot?
+    - sei umano?
+    - sto parlando con un bot?
+    - sto parlando con un umano?
+    - sei un AI?
+    - sei un intelligenza artificiale?
+
+- intent: info_intent
+  examples: |
+    - Mi serve aiuto.
+    - Dimmi di più.
+    - Ho bisogno di informazioni.
+    - Quali sono i vostri clienti principali?
+    - A chi si rivolgono principalmente i vostri servizi?
+    - Di quale tipo di aziende vi occupate principalmente?
+    - Quali sono le categorie di aziende che beneficiano dei vostri servizi?
+    - Potresti descrivermi il vostro target di clientela?
+    - Quali sono le caratteristiche delle aziende che solitamente scegliete come clienti?
+    - Di quali settori si occupano principalmente i vostri clienti?
+    - Quali tipologie di aziende possono trarre vantaggio dalle vostre soluzioni tecnologiche?
+    - Chi sono i vostri interlocutori principali nel settore turistico?
+    - Quali sono le sfide più comuni affrontate dai vostri clienti nel mondo digitale?
+    - Come vi distinguete nel supportare i vostri clienti nel settore turistico?
+    - A chi rivolgersi per ottenere ulteriori informazioni sui vostri servizi?
+    - Chi siete?
+    - Per chi lavorate?
+    - Come guadagnate?
+    - Perché dovrei rivolgermi a voi?
+
+
+- intent: approccio
+  examples: |
+    - vi voglio contattare
+    - come vi posso chiamare
+    - dove trovo l'email
+    - ho dei problemi
+    - il sito non funziona
+    - dove vi trovo
+
+
+- intent: start
+  examples: |
+    -start
+
+
+- intent: ringraziamento
+  examples: |
+    - Grazie per l'aiuto!
+    - Grazie per la risposta.
+    - Ti ringrazio per il supporto.
+    - Grazie per il tempo dedicato!
+    - Grazie, hai risolto il problema!
+    - Ti sono grato per l'assistenza.
+    - Grazie infinite!
+    - Ti ringrazio per la gentilezza.
+    - Grazie per la comprensione.
+    - Ti ringrazio molto!
+    - Grazie per il chiarimento.
+    - Ti sono grato per il tuo aiuto.
+    - Grazie per il supporto ricevuto.
+    - Ti ringrazio per l'attenzione.
+    - Grazie per il tuo sostegno.
+
+
