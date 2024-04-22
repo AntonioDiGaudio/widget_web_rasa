@@ -52,6 +52,7 @@ function setBotResponse(response) {
     } else {
       // if we get response from Rasa
       for (let i = 0; i < response.length; i += 1) {
+        
         // check if the response contains "text"
         if (Object.hasOwnProperty.call(response[i], "text")) {
           if (response[i].text != null) {
@@ -163,6 +164,8 @@ function setBotResponse(response) {
           if (payload === "cardsCarousel") {
             const restaurantsData = response[i].custom.data;
             showCardsCarousel(restaurantsData);
+            
+          
             return;
           }
 
@@ -370,18 +373,18 @@ $(".usrInput").on("keyup keypress", (e) => {
       return false;
     }
     // destroy the existing chart, if yu are not using charts, then comment the below lines
-    $(".collapsible").remove();
-    $(".dropDownMsg").remove();
-    if (typeof chatChart !== "undefined") {
-      chatChart.destroy();
-    }
+    // $(".collapsible").remove();
+    // $(".dropDownMsg").remove();
+    // if (typeof chatChart !== "undefined") {
+    //   chatChart.destroy();
+    // }
 
     $(".chart-container").remove();
     if (typeof modalChart !== "undefined") {
       modalChart.destroy();
     }
-
-    $("#paginated_cards").remove();
+    //uncomment for delete cards after new message
+    // $("#paginated_cards").remove();
     $(".suggestions").remove();
     $(".quickReplies").remove();
     $(".usrInput").blur();

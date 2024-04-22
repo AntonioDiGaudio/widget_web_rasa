@@ -14,7 +14,7 @@ from rasa_sdk.executor import CollectingDispatcher
 class SalutoActionClass(Action):
 
     def name(self) -> Text:
-        return "act_saluto"
+        return "action_greet"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -32,7 +32,7 @@ class SalutoActionClass(Action):
 class TripCarousel(Action):
 
     def name(self) -> Text:
-        return "act_list"
+        return "action_resources_list"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,

@@ -23,14 +23,6 @@ stories:
 
 
 
-- story: contact_approach path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: approccio
-  - action: act_list
-
-
 
 
 
