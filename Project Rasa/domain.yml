@@ -68,8 +68,8 @@ responses:
   - text: "È sempre un piacere!"
 
 actions:
-  - act_saluto
-  - act_list
+  - action_greet
+  - action_resources_list
 
 
 

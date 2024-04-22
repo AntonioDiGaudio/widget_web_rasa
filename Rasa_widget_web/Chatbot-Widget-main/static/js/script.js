@@ -44,7 +44,7 @@ window.addEventListener('load', () => {
     // if you want the bot to start the conversation
      //customActionTrigger();
 
-     send("start");
+     send("ciao");
      $("#userInput").prop("disabled", false);
 
 

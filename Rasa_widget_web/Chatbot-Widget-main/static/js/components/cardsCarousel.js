@@ -3,9 +3,11 @@
  * @param {Array} cardsData json array
  */
 function createCardsCarousel(cardsData) {
+    const carouselId = `carousel_${Math.floor(Math.random() * 1000000)}`; // Genera un ID univoco per il carosello
+
     let cards = "";
     cardsData.map((card_item, index) => {
-        const buttonElement = `<button id="Id_bottone_${index}" class="cards_button" ${card_item.url.startsWith("tel:") ? "onclick='window.location.href=\"" + card_item.url + "\"'": "onclick='redirectTo(\"" + card_item.url + "\")'"}>
+        const buttonElement = `<button id="${carouselId}_button_${index}" class="cards_button" ${card_item.url.startsWith("tel:") ? "onclick='window.location.href=\"" + card_item.url + "\"'": "onclick='redirectTo(\"" + card_item.url + "\")'"}>
             Clicca qui
         </button>`;
         
@@ -22,7 +24,7 @@ function createCardsCarousel(cardsData) {
         cards += item;
     });
     
-    const cardContents = `<div id="paginated_cards" class="cards"> 
+    const cardContents = `<div id="${carouselId}" class="cards"> 
         <div class="cards_scroller">${cards} 
             <span class="arrow prev fa fa-chevron-circle-left "></span> 
             <span class="arrow next fa fa-chevron-circle-right" ></span> 
@@ -31,6 +33,7 @@ function createCardsCarousel(cardsData) {
     
     return cardContents;
 }
+
 
 
 
@@ -48,28 +51,34 @@ function showCardsCarousel(cardsToAdd) {
 
     $(cards).appendTo(".chats").show();
 
+    // Seleziona il carosello appena aggiunto
+    const card = document.querySelector(".cards:last-child");
+
+    // Seleziona le frecce di navigazione specifiche per il carosello
+    const prevArrow = card.querySelector(".arrow.prev");
+    const nextArrow = card.querySelector(".arrow.next");
+
+    // Seleziona l'area di scorrimento del carosello
+    const card_scroller = card.querySelector(".cards_scroller");
+    const card_item_size = 225;
+
+    // Nascondi le frecce se non ci sono abbastanza carte da mostrare
     if (cardsToAdd.length <= 2) {
-        $(`.cards .arrow.prev`).hide(); // Nascondi la freccia "precedente" se non ci sono abbastanza carte da mostrare
-        $(`.cards .arrow.next`).hide(); // Nascondi la freccia "successiva" se non ci sono abbastanza carte da mostrare
+        $(prevArrow).hide();
+        $(nextArrow).hide();
     } else {
-        for (let i = 0; i < cardsToAdd.length; i += 1) {
-            $(`.cards_scroller>div.carousel_cards:nth-of-type(${i + 1})`).fadeIn(3000);
-        }
-        $(".cards .arrow.prev").fadeIn(3000);
-        $(".cards .arrow.next").fadeIn(3000);
+        // Mostriamo le frecce se ci sono abbastanza carte
+        $(prevArrow).fadeIn(3000);
+        $(nextArrow).fadeIn(3000);
     }
 
     scrollToBottomOfResults();
-
-    const card = document.querySelector("#paginated_cards");
-    const card_scroller = card.querySelector(".cards_scroller");
-    const card_item_size = 225;
 
     function scrollToNextPage() {
         const maxScrollLeft = card_scroller.scrollWidth - card_scroller.clientWidth;
         const currentScrollLeft = card_scroller.scrollLeft;
         const nextScrollLeft = currentScrollLeft + card_item_size;
-    
+        
         if (nextScrollLeft < maxScrollLeft) {
             card_scroller.scrollBy(card_item_size, 0);
         } else {
@@ -77,12 +86,18 @@ function showCardsCarousel(cardsToAdd) {
         }
     }
     
-
     function scrollToPrevPage() {
-        card_scroller.scrollBy(-card_item_size, 0);
+        const currentScrollLeft = card_scroller.scrollLeft;
+        const prevScrollLeft = currentScrollLeft - card_item_size;
+        
+        if (prevScrollLeft >= 0) {
+            card_scroller.scrollBy(-card_item_size, 0);
+        } else {
+            card_scroller.scrollTo(0, 0);
+        }
     }
 
-    card.querySelector(".arrow.next").addEventListener("click", scrollToNextPage);
-    card.querySelector(".arrow.prev").addEventListener("click", scrollToPrevPage);
-    $(".usrInput").focus();
+    // Aggiungi gli eventi di click alle frecce specifiche per il carosello
+    prevArrow.addEventListener("click", scrollToPrevPage);
+    nextArrow.addEventListener("click", scrollToNextPage);
 }
