@@ -326,12 +326,6 @@ div.content_data::-webkit-scrollbar {
 
 
 
-/*all button with this color*/
-button:focus{
-  outline: none;
-  background-color: #f57575;
-}
-
 
 
 

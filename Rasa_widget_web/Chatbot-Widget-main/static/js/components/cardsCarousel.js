@@ -3,10 +3,9 @@
  * @param {Array} cardsData json array
  */
 function createCardsCarousel(cardsData) {
-    const carouselId = `carousel_${Math.floor(Math.random() * 1000000)}`; // Genera un ID univoco per il carosello
-
+    const carouselId = `carousel_${Math.floor(Math.random() * 1000000)}`;
     let cards = "";
-    cardsData.map((card_item, index) => {
+    cardsData.forEach((card_item, index) => {
         const buttonElement = `<button id="${carouselId}_button_${index}" class="cards_button" ${card_item.url.startsWith("tel:") ? "onclick='window.location.href=\"" + card_item.url + "\"'": "onclick='redirectTo(\"" + card_item.url + "\")'"}>
             Clicca qui
         </button>`;
@@ -30,9 +29,29 @@ function createCardsCarousel(cardsData) {
             <span class="arrow next fa fa-chevron-circle-right" ></span> 
         </div> 
     </div>`;
-    
-    return cardContents;
+
+    const element = document.createElement('div');
+    element.innerHTML = cardContents;
+
+    // Aggiungi gestori di eventi per il cambio di colore del bottone
+    element.querySelectorAll('.cards_button').forEach(button => {
+        button.addEventListener('mousedown', () => {
+            button.style.backgroundColor = '#ff5757';
+        });
+        button.addEventListener('touchstart', () => {
+            button.style.backgroundColor = '#ff5757';
+        });
+        button.addEventListener('mouseup', () => {
+            button.style.backgroundColor = '';
+        });
+        button.addEventListener('touchend', () => {
+            button.style.backgroundColor = '';
+        });
+    });
+
+    return element.firstChild;
 }
+
 
 
 
