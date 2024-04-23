@@ -6,7 +6,17 @@ function createCardsCarousel(cardsData) {
     const carouselId = `carousel_${Math.floor(Math.random() * 1000000)}`;
     let cards = "";
     cardsData.forEach((card_item, index) => {
-        const buttonElement = `<button id="${carouselId}_button_${index}" class="cards_button" ${card_item.url.startsWith("tel:") ? "onclick='window.location.href=\"" + card_item.url + "\"'": "onclick='redirectTo(\"" + card_item.url + "\")'"}>
+        let buttonClickHandler = '';
+        if (card_item.url.startsWith("tel:")) {
+            buttonClickHandler = `onclick='window.location.href="${card_item.url}"'`;
+        } else if (card_item.url.startsWith("https:")) {
+            buttonClickHandler = `onclick='redirectTo("${card_item.url}")'`;
+        } else if (card_item.url.includes("#")) {
+            buttonClickHandler = `onclick='redirectToAnchor("${card_item.url}")'`;
+        }
+        
+
+        const buttonElement = `<button id="${carouselId}_button_${index}" class="cards_button" ${buttonClickHandler}>
             Clicca qui
         </button>`;
         
@@ -55,10 +65,15 @@ function createCardsCarousel(cardsData) {
 
 
 
-
 function redirectTo(link) {
     window.open(link, "_blank");
 }
+
+
+function redirectToAnchor(link) {
+    window.location.href = "#" + link;
+}
+
 
 /**
  * appends cards carousel on to the chat screen
@@ -91,6 +106,24 @@ function showCardsCarousel(cardsToAdd) {
         $(nextArrow).fadeIn(3000);
     }
 
+
+    let touchstartX = 0
+    let touchendX = 0
+        
+    function checkDirection() {
+    if (touchendX < touchstartX) scrollToNextPage()
+    if (touchendX > touchstartX) scrollToPrevPage()
+    }
+
+    document.addEventListener('touchstart', e => {
+    touchstartX = e.changedTouches[0].screenX
+    })
+
+    document.addEventListener('touchend', e => {
+    touchendX = e.changedTouches[0].screenX
+    checkDirection()
+    })
+
     scrollToBottomOfResults();
 
     function scrollToNextPage() {
@@ -115,6 +148,7 @@ function showCardsCarousel(cardsToAdd) {
             card_scroller.scrollTo(0, 0);
         }
     }
+   
 
     // Aggiungi gli eventi di click alle frecce specifiche per il carosello
     prevArrow.addEventListener("click", scrollToPrevPage);
