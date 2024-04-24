@@ -14,12 +14,6 @@ rules:
 
 
 
-- rule: Say Ciao
-  steps:
-  - intent: greet
-  - action: utter_greet
-
-
 - rule: nlu low confidence
   steps:
   - intent: nlu_fallback

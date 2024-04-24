@@ -2,24 +2,24 @@ stories:
 
 
 
-- story: more info path 1
-  steps: 
-  - intent: greet
-  - action: utter_greet
-  - intent: info_intent
-  - action: utter_info
-  - intent: affirm
-  - action: utter_info
+# - story: more info path 1
+#   steps: 
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: info_intent
+#   - action: utter_info
+#   - intent: affirm
+#   - action: utter_info
 
 
-- story: stop info 
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: info_intent
-  - action: utter_info
-  - intent: deny
-  - action: utter_fail
+# - story: stop info 
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: info_intent
+#   - action: utter_info
+#   - intent: deny
+#   - action: utter_fail
 
 
 
