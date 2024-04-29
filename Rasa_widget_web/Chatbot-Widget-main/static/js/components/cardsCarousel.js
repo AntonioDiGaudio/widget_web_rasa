@@ -1,3 +1,5 @@
+import Splide from '@splidejs/splide';
+
 /**
  * creates horizontally placed cards carousel
  * @param {Array} cardsData json array
@@ -32,13 +34,26 @@ function createCardsCarousel(cardsData) {
         </div>`;
         cards += item;
     });
+
+
+
+    new Splide( '.splide' ).mount();
+
+
+    var splide = new Splide( '.splide', {
+        type   : 'loop',
+        padding: '5rem',
+    } );
+  
+  splide.mount();
     
-    const cardContents = `<div id="${carouselId}" class="cards"> 
-        <div class="cards_scroller">${cards} 
-            <span class="arrow prev fa fa-chevron-circle-left "></span> 
-            <span class="arrow next fa fa-chevron-circle-right" ></span> 
-        </div> 
-    </div>`;
+    const cardContents = `<section class="splide cards" aria-label="Splide Basic HTML Example">
+    <div class="splide__track cards_scroller">${cards}
+          <ul class="splide__list">
+              <li class="splide__slide">${carouselId}</li>
+          </ul>
+    </div>
+  </section>`;
 
     const element = document.createElement('div');
     element.innerHTML = cardContents;
