@@ -8,7 +8,7 @@ function createCardsCarousel(cardsData) {
     cardsData.forEach((card_item, index) => {
         let buttonClickHandler = '';
         if (card_item.url.startsWith("tel:")) {
-            buttonClickHandler = `onclick='window.location.href="${card_item.url}"'`;
+            buttonClickHandler = `onclick='window.open("${card_item.url}")'`;
         } else if (card_item.url.startsWith("https:")) {
             buttonClickHandler = `onclick='redirectTo("${card_item.url}")'`;
         } else if (card_item.url.includes("#")) {
@@ -72,8 +72,11 @@ function redirectTo(link) {
 
 function redirectToAnchor(link) {
     window.location.href = "#" + link;
+    
 }
-
+let touchstartX = 0
+    let touchendX = 0
+    let isAnimated = false
 
 /**
  * appends cards carousel on to the chat screen
@@ -107,22 +110,34 @@ function showCardsCarousel(cardsToAdd) {
     }
 
 
-    let touchstartX = 0
-    let touchendX = 0
+    
         
+
+
+
     function checkDirection() {
     if (touchendX < touchstartX) scrollToNextPage()
     if (touchendX > touchstartX) scrollToPrevPage()
     }
 
     document.addEventListener('touchstart', e => {
-    touchstartX = e.changedTouches[0].screenX
+        touchstartX = e.changedTouches[0].screenX
     })
 
-    document.addEventListener('touchend', e => {
-    touchendX = e.changedTouches[0].screenX
-    checkDirection()
+
+    document.addEventListener('touchmove', e => {
+        touchendX=e.changedTouches[0].screenX
+        console.log(e)
+        if(!isAnimated){
+            console.log("non sta animando")
+            if ( (Math.abs(touchendX)-Math.abs(touchstartX)) > 10 ) {
+                isAnimated = true
+                console.log("sta animando")
+                checkDirection()
+                }
+        }
     })
+
 
     scrollToBottomOfResults();
 
@@ -130,27 +145,39 @@ function showCardsCarousel(cardsToAdd) {
         const maxScrollLeft = card_scroller.scrollWidth - card_scroller.clientWidth;
         const currentScrollLeft = card_scroller.scrollLeft;
         const nextScrollLeft = currentScrollLeft + card_item_size;
-        
+    
         if (nextScrollLeft < maxScrollLeft) {
-            card_scroller.scrollBy(card_item_size, 0);
+            // Anima lo scorrimento orizzontale
+            $(card_scroller).animate({ scrollLeft: nextScrollLeft }, 500, "swing", endAnimation);
         } else {
-            card_scroller.scrollTo(maxScrollLeft, 0);
+            // Se siamo già alla fine, scorrimento fino alla fine
+            $(card_scroller).animate({ scrollLeft: maxScrollLeft }, 500, "swing", endAnimation);
         }
     }
     
     function scrollToPrevPage() {
         const currentScrollLeft = card_scroller.scrollLeft;
         const prevScrollLeft = currentScrollLeft - card_item_size;
-        
+    
         if (prevScrollLeft >= 0) {
-            card_scroller.scrollBy(-card_item_size, 0);
+            // Anima lo scorrimento orizzontale
+            $(card_scroller).animate({ scrollLeft: prevScrollLeft }, 500, "swing", endAnimation);
         } else {
-            card_scroller.scrollTo(0, 0);
+            // Se siamo già all'inizio, scorrimento fino all'inizio
+            $(card_scroller).animate({ scrollLeft: 0 }, 500 , "swing", endAnimation);
         }
     }
-   
+
+
+
+
+   function endAnimation(){
+    console.log("Fine animazione"+ isAnimated)
+    isAnimated = false
+   }
 
     // Aggiungi gli eventi di click alle frecce specifiche per il carosello
     prevArrow.addEventListener("click", scrollToPrevPage);
     nextArrow.addEventListener("click", scrollToNextPage);
 }
+

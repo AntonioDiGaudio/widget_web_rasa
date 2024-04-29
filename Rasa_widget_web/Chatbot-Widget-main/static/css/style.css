@@ -15,6 +15,7 @@ body {
   background: #fff;
   border-radius: 10px 10px 10px 10px;
   box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 5px 0 #00000096;
+  
 }
 
 .chat_header {
@@ -24,6 +25,8 @@ body {
   padding: 5px;
   font-size: 20px;
   display: flex;
+  justify-content: space-between;
+  
 }
 
 .chat_header_logo {
@@ -118,6 +121,17 @@ div.chats > ul:not(.browser-default) > li {
   list-style-type: initial;
 }
 
+
+.white-text-primary{
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.white-text-second{
+  font-size: 12px;
+  
+}
+
 div.chats > span.botMsg > ol {
   padding-left: 1em;
 }
@@ -128,8 +142,8 @@ textarea {
   overflow: hidden;
   font-family: 'San Francisco', Helvetica, Arial, san-serif;
   background-color: transparent;
+  font-size: 16px;
 }
-
 textarea::-webkit-input-placeholder {
   font-family: 'San Francisco', Helvetica, Arial, san-serif;
 }
@@ -180,6 +194,7 @@ textarea-webkit-scrollbar {
   border: 0;
   padding-left: 15px;
   height: 40px;
+  font-size: 16px !important;
 }
 
 .keypad {
@@ -221,23 +236,11 @@ textarea-webkit-scrollbar {
   bottom: 0;
   right: 0;
   cursor: pointer;
+  margin: 16px;
 }
 
 
-/* Styling for close button */
-.close-button {
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 15px;
-  font-size: 18px;
-  color: #fff;
-}
 
-.close-button:hover {
-  color: #333; /* Adjust hover color as needed */
-}
 
 
 @keyframes animateElement {
@@ -564,5 +567,17 @@ video:focus {
 .tap-target {
   color: #fff;
   background: #FF5757;
+}
+
+.img_close{
+  height: 20px;
+  width: 20px;
+  margin-top: 12%;
+  
+}
+
+.box_close{
+   margin-right: 4%;
+   margin-top: 6.2%;
 }
 
