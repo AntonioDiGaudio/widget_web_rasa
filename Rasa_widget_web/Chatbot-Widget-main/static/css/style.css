@@ -581,3 +581,9 @@ video:focus {
    margin-top: 6.2%;
 }
 
+
+
+.splide__arrow svg {
+  fill: #ff5757 !important;
+ 
+}

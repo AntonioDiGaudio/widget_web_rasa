@@ -88,9 +88,14 @@ function showCardsCarousel(cardsToAdd) {
 
     new Splide(cards, {
         type: 'slide',
-        perPage: 2,
         pagination: false,
+        perPage:2,
         arrows: true,
         gap:10,
+        wheel:true,
+        focus:'center',
+        speed:600,
+        flickPower:500,
+        flickMaxPages:0.4,
     }).mount();
 }
