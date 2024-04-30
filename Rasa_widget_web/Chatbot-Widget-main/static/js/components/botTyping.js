@@ -1,4 +1,5 @@
 
+
 /**
  * removes the bot typing indicator from the chat screen
  */
@@ -15,4 +16,5 @@ function showBotTyping() {
     $(botTyping).appendTo(".chats");
     $(".botTyping").show();
     scrollToBottomOfResults();
+    
 }

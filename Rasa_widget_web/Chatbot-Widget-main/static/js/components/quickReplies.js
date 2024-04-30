@@ -1,43 +1,76 @@
-/**
- * appends horizontally placed buttons carousel
- * on to the chat screen
- * @param {Array} quickRepliesData json array
- */
-function showQuickReplies(quickRepliesData) {
-    let chips = "";
-    for (let i = 0; i < quickRepliesData.length; i += 1) {
-        const chip = `<div class="chip" data-payload='${quickRepliesData[i].payload}'>${quickRepliesData[i].title}</div>`;
-        chips += chip;
+function showQuickReplies() {
+    function createDictionaryFromData(data) {
+        let dictionary = {};
+        data.forEach(item => {
+            dictionary[item.payload] = item.title;
+        });
+        return dictionary;
     }
+    
+    const data = [
+        {
+            "title": "Vorrei prenotare un viaggio ✈️",
+            "payload": "/flight"
+        },
+        {
+            "title": "Grazie ❤️",
+            "payload": "/thanks"
+        },
+        {
+            "title": "Arrivederci 👋",
+            "payload": "/bye"
+        },
+        {
+            "title": "Mi serve aiuto 🆘",
+            "payload": "/help"
+        },
+        {
+            "title": "Come ti chiami? 🤔",
+            "payload": "/hello"
+        },
+        {
+            "title": "Vorrei chiederti di più ℹ️",
+            "payload": "/help"
+        }
+    ];
+
+    const quickRepliesData = createDictionaryFromData(data);
+    const keys = Object.keys(quickRepliesData);
+
+    let chips = "";
+    keys.forEach(key => {
+        const chip = `<div class="chip" data-payload='${key}'>${quickRepliesData[key]}</div>`;
+        chips += chip;
+    });
 
     const quickReplies = `<div class="quickReplies">${chips}</div><div class="clearfix"></div>`;
     $(quickReplies).appendTo(".chats").fadeIn(1000);
     scrollToBottomOfResults();
     const slider = document.querySelector(".quickReplies");
-    let isDown = false;
-    let startX;
-    let scrollLeft;
+    let pressed = false;
+    let startX = 0;
 
-    slider.addEventListener("mousedown", (e) => {
-        isDown = true;
-        slider.classList.add("active");
-        startX = e.pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
+    slider.addEventListener('mousedown', function (e) {
+        pressed = true;
+        startX = e.clientX;
+        this.style.cursor = 'grabbing';
     });
-    slider.addEventListener("mouseleave", () => {
-        isDown = false;
-        slider.classList.remove("active");
+
+    slider.addEventListener('mouseleave', function (e) {
+        pressed = false;
     });
-    slider.addEventListener("mouseup", () => {
-        isDown = false;
-        slider.classList.remove("active");
+
+    window.addEventListener('mouseup', function (e) {
+        pressed = false;
+        slider.style.cursor = 'grab';
     });
-    slider.addEventListener("mousemove", (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 3; // scroll-fast
-        slider.scrollLeft = scrollLeft - walk;
+
+    slider.addEventListener('mousemove', function (e) {
+        if (!pressed) {
+            return;
+        }
+
+        this.scrollLeft += startX - e.clientX;
     });
 }
 

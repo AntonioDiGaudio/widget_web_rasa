@@ -1,3 +1,6 @@
+
+
+
 /**
  * Creates a carousel using Splide.js
  * @param {Array} cardsData - JSON array containing card data
@@ -32,7 +35,6 @@ function createCardsCarousel(cardsData) {
         </div>`;
         cards += item;
     });
-    
 
 
 
@@ -92,10 +94,11 @@ function showCardsCarousel(cardsToAdd) {
         perPage:2,
         arrows: true,
         gap:10,
-        wheel:true,
+        // wheel:true,
         focus:'center',
         speed:600,
         flickPower:500,
         flickMaxPages:0.4,
     }).mount();
+    
 }

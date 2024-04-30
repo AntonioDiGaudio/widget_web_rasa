@@ -98,6 +98,7 @@ function setBotResponse(response) {
             }
             // append the bot response on to the chat screen
             $(botResponse).appendTo(".chats").hide().fadeIn(1000);
+            showQuickReplies();
           }
         }
 
@@ -107,6 +108,7 @@ function setBotResponse(response) {
             const BotResponse = `<div class="singleCard"><img class="imgcard" src="${response[i].image}"></div><div class="clearfix">`;
 
             $(BotResponse).appendTo(".chats").hide().fadeIn(1000);
+            showQuickReplies();
           }
         }
 
@@ -114,6 +116,7 @@ function setBotResponse(response) {
         if (Object.hasOwnProperty.call(response[i], "buttons")) {
           if (response[i].buttons.length > 0) {
             addSuggestion(response[i].buttons);
+            showQuickReplies();
           }
         }
 
@@ -126,6 +129,7 @@ function setBotResponse(response) {
 
               const BotResponse = `<div class="video-container"> <iframe src="${video_url}" frameborder="0" allowfullscreen></iframe> </div>`;
               $(BotResponse).appendTo(".chats").hide().fadeIn(1000);
+              showQuickReplies();
             }
           }
         }
@@ -142,6 +146,7 @@ function setBotResponse(response) {
           // check if the custom payload type is "pdf_attachment"
           if (payload === "pdf_attachment") {
             renderPdfAttachment(response[i]);
+            showQuickReplies();
             return;
           }
 
@@ -149,6 +154,7 @@ function setBotResponse(response) {
           if (payload === "dropDown") {
             const dropDownData = response[i].custom.data;
             renderDropDwon(dropDownData);
+            showQuickReplies();
             return;
           }
 
@@ -157,6 +163,7 @@ function setBotResponse(response) {
             $("#userInput").prop("disabled", true);
             getLocation();
             scrollToBottomOfResults();
+            showQuickReplies();
             return;
           }
 
@@ -164,7 +171,8 @@ function setBotResponse(response) {
           if (payload === "cardsCarousel") {
             const restaurantsData = response[i].custom.data;
             showCardsCarousel(restaurantsData);
-            
+            $(".quickReplies").remove();
+            showQuickReplies();
           
             return;
           }
@@ -207,6 +215,7 @@ function setBotResponse(response) {
                 displayLegend
               );
             });
+            showQuickReplies();
             return;
           }
 
@@ -215,6 +224,7 @@ function setBotResponse(response) {
             const { data } = response[i].custom;
             // pass the data variable to createCollapsible function
             createCollapsible(data);
+            showQuickReplies();
           }
         }
       }

@@ -165,7 +165,6 @@ textarea-webkit-scrollbar {
   margin-bottom: 4px;
   font-size: 13px;
   max-width: 200px;
-  min-width: 15%;
   border-radius: 20px 5px 20px 20px;
 }
 
@@ -497,8 +496,8 @@ div.content_data::-webkit-scrollbar {
 }
 
 .botTyping > div {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   background-color: #FFFFFF;
   border-radius: 100%;
   display: inline-block;
@@ -587,3 +586,55 @@ video:focus {
   fill: #ff5757 !important;
  
 }
+
+
+
+/* css for quick replies */
+
+.quickReplies {
+  display: -webkit-box; 
+  /*display: ruby; */
+  user-select: none;
+  float: left;
+  height: 12%;
+  overflow-x: auto;
+  scroll-snap-type: x;
+  cursor: grab;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  width: 100%;
+  margin-top: 3%;
+}
+
+.quickReplies::-webkit-scrollbar { /* for chrome */
+  display: none;
+}
+
+.quickReplies.active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  transform: scale(1);
+}
+
+.chip {
+  background-color: rgb(246 244 244);
+  border: 0px solid ;
+  color: #ff5757;
+  font-weight: bolder;
+  border-radius: 34px;
+  height: 50%;   
+  margin-right:5%;  
+  padding-top: 1%;
+  padding-right: 3%;
+  padding-left: 3%;  
+  padding-bottom:1%; 
+  box-shadow: -4px 4px 4px rgb(182 182 182);  
+  margin-left:5%;
+}
+
+.chip:hover {
+  color: black;
+  transform: scale(1);
+}
+
+
